@@ -13,7 +13,7 @@ There is a couple of microservices which implemented **e-commerce** modules over
 We have implemented below **features over the run-aspnetcore-microservices repository**.
 
 #### Catalog microservice which includes; 
-* ASP.NET Core Minimal APIs and latest features of .NET8 and C# 12
+* ASP.NET Core Minimal APIs and latest features of .NET9 and C# 13
 * **Vertical Slice Architecture** implementation with Feature folders and single .cs file includes different classes in one file
 * CQRS implementation using MediatR library
 * CQRS Validation Pipeline Behaviors with MediatR and FluentValidation
@@ -88,10 +88,3 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 5. Launch **Shopping Web UI -> https://localhost:6065** in your browser to view index page. You can use Web project in order to **call microservices over Yarp API Gateway**. When you **checkout the basket** you can follow **queue record on RabbitMQ dashboard**.
 
 ![mainscreen2](https://user-images.githubusercontent.com/1147445/81381837-08226000-9116-11ea-9489-82645b8dbfc4.png)
-
-## Authors
-
-* **Mehmet Ozkaya** - *Initial work* - [mehmetozkaya](https://github.com/mehmetozkaya)
-
-See also the list of [contributors](https://github.com/aspnetrun/run-core/contributors) who participated in this project. Check also [gihtub page of repository.](https://aspnetrun.github.io/run-aspnetcore-angular-realworld/)
-
