@@ -4,6 +4,9 @@ See the overall picture of **implementations on microservices with .net tools** 
 
 ![microservices](https://github.com/aspnetrun/run-aspnetcore-microservices/assets/1147445/efe5e688-67f2-4ddd-af37-d9d3658aede4)
 
+![image](https://github.com/user-attachments/assets/60ed2ff7-6b51-4aea-b27e-87589748ccfb)
+
+
 There is a couple of microservices which implemented **e-commerce** modules over **Catalog, Basket, Discount** and **Ordering** microservices with **NoSQL (DocumentDb, Redis)** and **Relational databases (PostgreSQL, Sql Server)** with communicating over **RabbitMQ Event Driven Communication** and using **Yarp API Gateway**.
 
 ### Check Explanation of this Repository on Medium
