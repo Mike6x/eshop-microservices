@@ -15,6 +15,7 @@ services:
       
       
       
+      
   basketdb:
     container_name: basketdb
     environment:
@@ -78,8 +79,8 @@ services:
     depends_on:
       - catalogdb
     ports:
-      - "6000:8080"
-      - "6060:8081"
+      - "6610:8080"
+      - "6010:8081"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
@@ -106,8 +107,8 @@ services:
       - discount.grpc
       - messagebroker
     ports:
-      - "6001:8080"
-      - "6061:8081"
+      - "6611:8080"
+      - "6011:8081"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
@@ -124,8 +125,8 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - ASPNETCORE_Kestrel__Certificates__Default__Password=123P@ssw0rd!
     ports:
-      - "6002:8080"
-      - "6062:8081"
+      - "6612:8080"
+      - "6012:8081"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
@@ -149,8 +150,8 @@ services:
       - orderdb
       - messagebroker
     ports:
-      - "6003:8080"
-      - "6063:8081"
+      - "6613:8080"
+      - "6013:8081"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
@@ -170,8 +171,8 @@ services:
       - basket.api
       - ordering.api
     ports:
-      - "6004:8080"
-      - "6064:8081"
+      - "6600:8080"
+      - "6000:8081"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
@@ -191,8 +192,8 @@ services:
     depends_on:
       - yarpapigateway
     ports:
-      - "6005:8080"
-      - "6065:8081"
+      - "6602:8080"
+      - "6002:8081"
     volumes:
       - ~/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
