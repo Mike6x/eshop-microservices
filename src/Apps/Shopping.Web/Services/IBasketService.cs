@@ -4,16 +4,16 @@ namespace Shopping.Web.Services;
 
 public interface IBasketService
 {
-    [Get("/basket-service/basket/{userName}")]
+    [Get("/basket-service/baskets/{userName}")]
     Task<GetBasketResponse> GetBasket(string userName);
 
-    [Post("/basket-service/basket")]
+    [Post("/basket-service/baskets")]
     Task<StoreBasketResponse> StoreBasket(StoreBasketRequest request);
 
-    [Delete("/basket-service/basket/{userName}")]
+    [Delete("/basket-service/baskets/{userName}")]
     Task<DeleteBasketResponse> DeleteBasket(string userName);
 
-    [Post("/basket-service/basket/checkout")]
+    [Post("/basket-service/baskets/checkout")]
     Task<CheckoutBasketResponse> CheckoutBasket(CheckoutBasketRequest request);
 
     public async Task<ShoppingCartModel> LoadUserBasket()
