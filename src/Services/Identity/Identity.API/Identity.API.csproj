@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>ded4ce4e-5a9c-4337-9330-d02c332f040f</UserSecretsId>
+		<RootNamespace>Identity.Api</RootNamespace>
+		<AssemblyName>Identity.Api</AssemblyName>
+        <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+        <LangVersion>13</LangVersion>
+        <Company>Identity.Api</Company>
+        <Product>Identity.Api</Product>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
+		<DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
+		<PackageReference Include="Carter" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Build" Version="17.12.6" />
+		<PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.12.6" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.12.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.12.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.12.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.12.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Identity.Application\Identity.Application.csproj" />
+	  <ProjectReference Include="..\Identity.Infrastructure\Identity.Infrastructure.csproj" />
+	</ItemGroup>
+	
+<!--	<ItemGroup>-->
+<!--	  <Content Include="..\..\..\.dockerignore">-->
+<!--	    <Link>.dockerignore</Link>-->
+<!--	  </Content>-->
+<!--	</ItemGroup>-->
+<!--	-->
+<!--    <PropertyGroup>-->
+<!--        <ContainerImageName>fluentpos.identity</ContainerImageName>-->
+<!--        <ContainerImageTags>1.0.0;latest</ContainerImageTags>-->
+<!--        <PublishProfile>DefaultContainer</PublishProfile>-->
+<!--    </PropertyGroup>-->
+</Project>

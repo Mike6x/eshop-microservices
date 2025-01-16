@@ -25,7 +25,7 @@ public static class Extensions
             config.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
 
-        //register module services
+        // register versioning and swagger
         builder.Services.ConfigureOpenApi();
         
         builder.Services.AddCarter();

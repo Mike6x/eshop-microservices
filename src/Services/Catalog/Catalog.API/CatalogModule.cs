@@ -33,20 +33,21 @@ public static class CatalogModule
             // brandGroup.MapImportBrandsEndpoint();
         }
     }
-    public static WebApplicationBuilder RegisterCatalogServices(this WebApplicationBuilder builder)
-    {
-        ArgumentNullException.ThrowIfNull(builder);
-        // builder.Services.BindDbContext<CatalogDbContext>();
-        // builder.Services.AddScoped<IDbInitializer, CatalogDbInitializer>();
-        //
-        // builder.Services.AddKeyedScoped<IRepository<Product>, CatalogRepository<Product>>("catalog:products");
-        // builder.Services.AddKeyedScoped<IReadRepository<Product>, CatalogRepository<Product>>("catalog:products");
-
-        return builder;
-    }
     
-    public static WebApplication UseCatalogModule(this WebApplication app)
-    {
-        return app;
-    }
+    // public static WebApplicationBuilder RegisterCatalogServices(this WebApplicationBuilder builder)
+    // {
+    //     ArgumentNullException.ThrowIfNull(builder);
+    //     // builder.Services.BindDbContext<CatalogDbContext>();
+    //     // builder.Services.AddScoped<IDbInitializer, CatalogDbInitializer>();
+    //     //
+    //     // builder.Services.AddKeyedScoped<IRepository<Product>, CatalogRepository<Product>>("catalog:products");
+    //     // builder.Services.AddKeyedScoped<IReadRepository<Product>, CatalogRepository<Product>>("catalog:products");
+    //
+    //     return builder;
+    // }
+    
+    // public static WebApplication UseCatalogModule(this WebApplication app)
+    // {
+    //     return app;
+    // }
 }

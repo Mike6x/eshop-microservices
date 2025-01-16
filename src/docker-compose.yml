@@ -12,9 +12,18 @@ services:
 
   orderdb:
     image: mcr.microsoft.com/mssql/server
-
+    
+  identitydb:
+    image: postgres
+    
   messagebroker:
     image: rabbitmq:management
+    
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: Services/Identity/Identity.API/Dockerfile
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -57,6 +66,7 @@ volumes:
   postgres_basket:
   mssql_order:
   rabbitmq_data:
+  postgres_identity:
 
 # rabbitmq_data is mounted to /var/lib/rabbitmq inside the container. 
 # RabbitMQ stores its data in /var/lib/rabbitmq by default,

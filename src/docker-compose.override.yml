@@ -11,11 +11,8 @@ services:
     ports:
         - "5432:5432"
     volumes:
-      - postgres_catalog:/var/lib/postgresql/data/ 
-      
-      
-      
-      
+      - postgres_catalog:/var/lib/postgresql/data/
+       
   basketdb:
     container_name: basketdb
     environment:
@@ -47,6 +44,18 @@ services:
       - ./log:/var/opt/mssql/log
       - ./secrets:/var/opt/mssql/secrets
       - ./backup:/var/opt/mssql/backup
+
+  identitydb:
+    container_name: identitydb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123ideDBP@ssw0rd
+      - POSTGRES_DB=IdentityDb
+    restart: always
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_identity:/var/lib/postgresql/data/
   
   messagebroker:
     container_name: messagebroker

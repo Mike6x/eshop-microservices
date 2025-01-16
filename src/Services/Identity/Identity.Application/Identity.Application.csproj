@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+		<RootNamespace>Identity.Application</RootNamespace>
+		<AssemblyName>Identity.Application</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>13</LangVersion>
+    <Company>Identity.Application</Company>
+    <Product>Identity.Application</Product>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="8.3.0" />
+        <PackageReference Include="Microsoft.IdentityModel.Logging" Version="8.3.0" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
+        <PackageReference Include="OpenIddict.Abstractions" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Tokens\" />
+    </ItemGroup>
+
+</Project>

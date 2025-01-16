@@ -45,9 +45,7 @@ We have implemented below **features over the run-aspnetcore-microservices repos
 * Using **MassTransit** for abstraction over RabbitMQ Message-Broker system
 * Publishing BasketCheckout event queue from Basket microservices and Subscribing this event from Ordering microservices	
 * Create **RabbitMQ EventBus.Messages library** and add references Microservices
-
-#### Ordering Microservice
-* Implementing **DDD, CQRS, and Clean Architecture** with using Best Practices
+ 
 * Developing **CQRS with using MediatR, FluentValidation and Mapster packages**
 * Consuming **RabbitMQ** BasketCheckout event queue with using **MassTransit-RabbitMQ** Configuration
 * **SqlServer database** connection and containerization
@@ -84,6 +82,8 @@ Follow these steps to get your development environment set up: (Before Run Start
   Or you can go to root directory which include **docker-compose.yml** files, run below command:
 ```csharp
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+docker-compose down  
 ```
 
 4. Wait for docker compose all microservices. That’s it! (some microservices need extra time to work so please wait if not worked in first shut)
@@ -94,7 +94,20 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 ## Authors
 
-* **Mehmet Ozkaya** - *Initial work* - [mehmetozkaya](https://github.com/mehmetozkaya)
+cd ./Services/Identity/identity.API/
 
-See also the list of [contributors](https://github.com/aspnetrun/run-core/contributors) who participated in this project. Check also [gihtub page of repository.](https://aspnetrun.github.io/run-aspnetcore-angular-realworld/)
+dotnet ef migrations add initial --project ../Identity.Infrastructure/ --context AppDbContext -o Migrations
+
+dotnet ef migrations add fix_user --project ../Identity.Infrastructure/ --context AppDbContext -o Migrations
+
+d
+otnet ef database update Initial --project ../Identity.Infrastructure/ --context AppDbContext 
+
+
+dotnet ef migrations remove --project ../Identity.Infrastructure/ --context AppDbContext   
+
+dotnet ef migrations list 
+
+
+
 
