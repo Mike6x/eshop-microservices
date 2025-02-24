@@ -24,10 +24,25 @@ public class TokensController : ControllerBase
     [HttpPost("~/connect/token"), IgnoreAntiforgeryToken, Produces("application/json")]
     public async Task<IActionResult> Exchange()
     {
-        var request = HttpContext.GetOpenIddictServerRequest() ?? throw new ArgumentNullException();
-        if (request.IsClientCredentialsGrantType())
+        var oidcRequest = HttpContext.GetOpenIddictServerRequest() ?? throw new ArgumentNullException();
+        if (oidcRequest.IsClientCredentialsGrantType())
         {
-            return await HandleClientCredentialsGrantType(request);
+            return await HandleClientCredentialsGrantType(oidcRequest);
+        }
+
+        if (oidcRequest.IsPasswordGrantType())
+        {
+           // return await TokensForPasswordGrantType(oidcRequest);
+        }
+        
+        if (oidcRequest.IsRefreshTokenGrantType())
+        {
+            // return tokens for refresh token flow
+        }
+
+        if (oidcRequest.GrantType == "custom_flow_name")
+        {
+            // return tokens for custom flow
         }
         throw new NotImplementedException("The specified grant type is not implemented.");
     }
